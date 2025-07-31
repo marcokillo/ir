@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پرونده قتل</title>
+  <style>
+    body {
+      background-color: black;
+      color: crimson;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      padding-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: crimson;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .error {
+      color: darkred;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>رمز عبور را وارد کن...</h1>
+  <input type="text" id="code" placeholder="رمز را وارد کن">
+  <br>
+  <button onclick="checkCode()">بررسی</button>
+  <div class="error" id="error"></div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('code').value.trim();
+      if (input === 'نقاب') {
+        window.location.href = 'success.html';
+      } else {
+        document.getElementById('error').innerText = 'رمز اشتباه است... دوباره تلاش کن.';
+      }
+    }
+  </script>
+</body>
+</html>
